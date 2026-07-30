@@ -1,28 +1,35 @@
+
 # Capell
 
-Capell is a Laravel and Filament CMS platform. The organization is split into a small number of source monorepos, generated package split repositories, sites, demos, and operational tooling.
+![Capell CMS — Core at the foundation, with Frontend and Admin branching off it and both feeding search and AI readiness](https://raw.githubusercontent.com/capell-app/capell/main/docs/images/capell-readme-hero.jpg)
 
-## Canonical source repositories
+**Capell is an open-source CMS for Laravel, built on Filament.**
 
-| Repository | Purpose |
-| --- | --- |
-| [`capell`](https://github.com/capell-app/capell) | Main Capell core CMS monorepo. |
-| [`capell-packages`](https://github.com/capell-app/capell-packages) | First-party package monorepo. |
-| [`capell-app`](https://github.com/capell-app/capell-app) | Sales and marketing site. |
-| [`capell-docs`](https://github.com/capell-app/capell-docs) | Documentation site. |
-| [`capell-demo`](https://github.com/capell-app/capell-demo) | Demo site. |
-| [`capell-ruby`](https://github.com/capell-app/capell-ruby) | Ruby demo site. |
-| [`capell-server`](https://github.com/capell-app/capell-server) | Backup of server configuration. |
+Every page save appends a full-state revision: editors compare changes field by field, roll back, and roll forward without erasing history. Page types, layouts, URLs, and publishing rules are structured records in your Laravel app — managed in a Filament admin, rendered by your own frontend. And Capell is Composer packages, not a monolith: a free, MIT-licensed **Capell Foundation** plus verified extensions — search, SEO, publishing workflow, forms, themes, and more — whose migrations, data access, and removal paths you can inspect before they install.
 
-## Generated split repositories
+Capell is not a hosted CMS and does not ship a public content-delivery API. Your pages render inside your Laravel application through Blade, Livewire, Inertia, Vue, or your own stack.
 
-`core`, `admin`, `frontend`, `marketplace`, and `installer` are generated from `capell` for Composer installs. Do not merge contributor PRs directly into those repositories.
+[capell.app](https://capell.app) · [Documentation](https://docs.capell.app) · [Live demo](https://capell.app/demo) · [Install instructions](https://github.com/capell-app/capell/blob/main/docs/getting-started/install.md) · [Roadmap](https://capell.app/roadmap) · [X](https://x.com/capell_app)
 
-Individual package repositories such as `address`, `blog`, `layout-builder`, and `theme-saas` are generated from `capell-packages`. They accept focused collaborator PRs, but maintainers merge the forwarded PR in `capell-packages`.
+## Start here
 
-## Contribution flow
+Install it into an existing Laravel application with two commands:
 
-- Core changes go to `capell`.
-- First-party package changes go to `capell-packages`.
-- Split package PRs are forwarded automatically to `capell-packages` under `packages/<package>`.
-- Split repositories are updated by the monorepo split workflows on release tags.
+```bash
+composer require capell-app/installer
+php artisan capell:install
+```
+
+See the [main repository](https://github.com/capell-app/capell) for the full README, quickstart, and contribution guide.
+
+## The foundation packages
+
+| Package     | Composer name                                                   | What it does                                                                               |
+| ----------- | ---------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| Core        | [`capell-app/core`](https://github.com/capell-app/core)               | Laravel CMS content, publishing, extension, install, and upgrade foundations for Capell.    |
+| Admin       | [`capell-app/admin`](https://github.com/capell-app/admin)             | Filament administration, page editing, recovery, settings, and operations for Capell CMS.   |
+| Frontend    | [`capell-app/frontend`](https://github.com/capell-app/frontend)       | Public routing, rendering, themes, assets, and cache-safe delivery for Capell CMS.           |
+| Installer   | [`capell-app/installer`](https://github.com/capell-app/installer)     | Guided browser and CLI installation for Capell CMS on Laravel.                              |
+| Marketplace | [`capell-app/marketplace`](https://github.com/capell-app/marketplace) | Extension marketplace browsing and acquisition for Capell CMS.                              |
+
+Descriptions above are copied verbatim from each package's own `composer.json`.
