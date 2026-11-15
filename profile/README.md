@@ -1,7 +1,10 @@
 
 # Capell
 
-![Capell CMS — Core at the foundation, with Frontend and Admin branching off it and both feeding search and AI readiness](https://raw.githubusercontent.com/capell-app/capell/main/docs/images/capell-readme-hero.jpg)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/capell-app/capell/main/docs/images/capell-readme-hero.jpg">
+  <img alt="The Capell wordmark on a faint drafting grid, above the lines “Extensible Laravel CMS” and “Strict coding standards. Painless upgrades.”" src="https://raw.githubusercontent.com/capell-app/capell/main/docs/images/capell-readme-hero-light.jpg">
+</picture>
 
 **Capell is an open-source CMS for Laravel, built on Filament.**
 
